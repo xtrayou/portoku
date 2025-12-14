@@ -88,36 +88,41 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Lazy load dokumentasi images
     lazyLoadDokumentasiImages();
+    
+    // Fallback: Load all images immediately if lazy loading fails
+    setTimeout(() => {
+        const notLoadedImages = document.querySelectorAll('.dok-image[data-bg]:not(.loaded)');
+        if (notLoadedImages.length > 0) {
+            console.log('Lazy loading may have failed, loading', notLoadedImages.length, 'images directly');
+            notLoadedImages.forEach(imgDiv => {
+                const bgImage = imgDiv.getAttribute('data-bg');
+                if (bgImage) {
+                    imgDiv.style.backgroundImage = `url('${bgImage}')`;
+                    imgDiv.classList.add('loaded');
+                }
+            });
+        }
+    }, 2000);
 });
 
 // Lazy Loading for Dokumentasi Images
 function lazyLoadDokumentasiImages() {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const imgDiv = entry.target;
-                const bgImage = imgDiv.getAttribute('data-bg');
-                if (bgImage) {
-                    // Preload image
-                    const img = new Image();
-                    img.onload = () => {
-                        imgDiv.style.backgroundImage = `url('${bgImage}')`;
-                        imgDiv.classList.add('loaded');
-                    };
-                    img.src = bgImage;
-                }
-                observer.unobserve(imgDiv);
-            }
-        });
-    }, {
-        root: null,
-        rootMargin: '200px', // Start loading 200px before image is visible
-        threshold: 0.01
-    });
-    
-    // Observe all dokumentasi images
+    // Get all dokumentasi images
     const dokImages = document.querySelectorAll('.dok-image[data-bg]');
-    dokImages.forEach(img => imageObserver.observe(img));
+    console.log('Found', dokImages.length, 'dokumentasi images to load');
+    
+    // Load images immediately instead of using IntersectionObserver
+    dokImages.forEach(imgDiv => {
+        const bgImage = imgDiv.getAttribute('data-bg');
+        if (bgImage) {
+            // Set background image directly
+            imgDiv.style.backgroundImage = `url('${bgImage}')`;
+            imgDiv.classList.add('loaded');
+            
+            // Log for debugging
+            console.log('Loading image:', bgImage);
+        }
+    });
 }
 
 // Project Image Slideshow

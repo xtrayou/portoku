@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Images</title>
+    <style>
+        body {
+            background: #1a0b2e;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .test-image {
+            width: 300px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            margin: 10px;
+            border: 2px solid #7127ba;
+            display: inline-block;
+        }
+        h1 { color: #9757d3; }
+        .status { 
+            color: #4ade80; 
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Dokumentasi Images</h1>
+    <div class="status">Testing first 10 images...</div>
+    
+    <div class="test-image" style="background-image: url('dokumentasimagang/IMG20250814080335.jpg');"></div>
+    <div class="test-image" style="background-image: url('dokumentasimagang/IMG20250814094016.jpg');"></div>
+    <div class="test-image" style="background-image: url('dokumentasimagang/IMG20250814103342.jpg');"></div>
+    <div class="test-image" style="background-image: url('dokumentasimagang/IMG20250814103344.jpg');"></div>
+    <div class="test-image" style="background-image: url('dokumentasimagang/IMG20250815143445.jpg');"></div>
+    <div class="test-image" style="background-image: url('dokumentasimagang/IMG20250815143508.jpg');"></div>
+    <div class="test-image" style="background-image: url('dokumentasimagang/IMG20250815143540.jpg');"></div>
+    <div class="test-image" style="background-image: url('dokumentasimagang/IMG20250819112438.jpg');"></div>
+    <div class="test-image" style="background-image: url('dokumentasimagang/IMG20250819112443.jpg');"></div>
+    <div class="test-image" style="background-image: url('dokumentasimagang/IMG20250819133208.jpg');"></div>
+    
+    <script>
+        // Check if images are loading
+        setTimeout(() => {
+            const images = document.querySelectorAll('.test-image');
+            let loaded = 0;
+            images.forEach(img => {
+                const bg = window.getComputedStyle(img).backgroundImage;
+                if (bg && bg !== 'none') {
+                    loaded++;
+                    console.log('Image loaded:', bg);
+                }
+            });
+            console.log(`${loaded} out of ${images.length} images loaded`);
+        }, 1000);
+    </script>
+</body>
+</html>
