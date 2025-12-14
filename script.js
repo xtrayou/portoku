@@ -85,7 +85,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Auto slideshow for project images
     initProjectSlideshow();
+    
+    // Lazy load dokumentasi images
+    lazyLoadDokumentasiImages();
 });
+
+// Lazy Loading for Dokumentasi Images
+function lazyLoadDokumentasiImages() {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const imgDiv = entry.target;
+                const bgImage = imgDiv.getAttribute('data-bg');
+                if (bgImage) {
+                    // Preload image
+                    const img = new Image();
+                    img.onload = () => {
+                        imgDiv.style.backgroundImage = `url('${bgImage}')`;
+                        imgDiv.classList.add('loaded');
+                    };
+                    img.src = bgImage;
+                }
+                observer.unobserve(imgDiv);
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '200px', // Start loading 200px before image is visible
+        threshold: 0.01
+    });
+    
+    // Observe all dokumentasi images
+    const dokImages = document.querySelectorAll('.dok-image[data-bg]');
+    dokImages.forEach(img => imageObserver.observe(img));
+}
 
 // Project Image Slideshow
 function initProjectSlideshow() {
