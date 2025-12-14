@@ -184,6 +184,24 @@ a {
   color: var(--text-white);
   font-family: var(--font-accent);
   margin-bottom: var(--spacing-sm);
+  min-height: 5rem;
+}
+
+.typewriter-text {
+  display: inline-block;
+  border-right: 3px solid var(--accent-purple);
+  padding-right: 8px;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+.typewriter-text.typing-done {
+  border-right: none;
+  animation: none;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--accent-purple); }
 }
 
 .hero-subtitle {
