@@ -89,6 +89,100 @@ function initProjectSlideshow() {
     });
 }
 
+// Project Gallery Variables
+let currentProject = '';
+let currentImageIndex = 0;
+let totalImages = 0;
+
+// Open Project Gallery
+function openProjectGallery(projectName, imageCount) {
+    currentProject = projectName;
+    totalImages = imageCount;
+    currentImageIndex = 1;
+    
+    const modal = document.getElementById('projectGalleryModal');
+    const galleryImage = document.getElementById('galleryImage');
+    const thumbnailsContainer = document.getElementById('galleryThumbnails');
+    
+    // Set first image
+    galleryImage.src = `foto/${projectName} (${currentImageIndex}).png`;
+    
+    // Update counter
+    updateGalleryCounter();
+    
+    // Generate thumbnails
+    thumbnailsContainer.innerHTML = '';
+    for (let i = 1; i <= imageCount; i++) {
+        const thumbnail = document.createElement('img');
+        thumbnail.src = `foto/${projectName} (${i}).png`;
+        thumbnail.className = 'gallery-thumbnail' + (i === 1 ? ' active' : '');
+        thumbnail.onclick = () => selectGalleryImage(i);
+        thumbnailsContainer.appendChild(thumbnail);
+    }
+    
+    // Show modal
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+// Close Project Gallery
+function closeProjectGallery() {
+    const modal = document.getElementById('projectGalleryModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Change Gallery Image (prev/next)
+function changeGalleryImage(direction) {
+    currentImageIndex += direction;
+    
+    // Loop around
+    if (currentImageIndex > totalImages) {
+        currentImageIndex = 1;
+    } else if (currentImageIndex < 1) {
+        currentImageIndex = totalImages;
+    }
+    
+    // Update image
+    const galleryImage = document.getElementById('galleryImage');
+    galleryImage.src = `foto/${currentProject} (${currentImageIndex}).png`;
+    
+    // Update counter
+    updateGalleryCounter();
+    
+    // Update active thumbnail
+    updateActiveThumbnail();
+}
+
+// Select specific image
+function selectGalleryImage(index) {
+    currentImageIndex = index;
+    
+    const galleryImage = document.getElementById('galleryImage');
+    galleryImage.src = `foto/${currentProject} (${currentImageIndex}).png`;
+    
+    updateGalleryCounter();
+    updateActiveThumbnail();
+}
+
+// Update gallery counter
+function updateGalleryCounter() {
+    const counter = document.getElementById('galleryCounter');
+    counter.textContent = `${currentImageIndex} / ${totalImages}`;
+}
+
+// Update active thumbnail
+function updateActiveThumbnail() {
+    const thumbnails = document.querySelectorAll('.gallery-thumbnail');
+    thumbnails.forEach((thumb, index) => {
+        if (index + 1 === currentImageIndex) {
+            thumb.classList.add('active');
+        } else {
+            thumb.classList.remove('active');
+        }
+    });
+}
+
 // Contact Form Handler
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');

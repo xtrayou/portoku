@@ -113,7 +113,7 @@
                   Mengembangkan website Pantauan Purwakarta Istimewa (PAPAIS) CCTV menggunakan Framework React.JS, CSS, dan Bootstrap dengan desain responsif dan user-friendly.
                 </p>
                 <div class="project-links">
-                  <a href="#" class="project-link">View Project</a>
+                  <button class="project-link" onclick="openProjectGallery('papais', 8)">View Project</button>
                 </div>
               </div>
             </div>
@@ -128,7 +128,7 @@
                   Mengembangkan dan membuat website Puskesmas dengan fokus pada user experience yang optimal dan kemudahan akses informasi kesehatan.
                 </p>
                 <div class="project-links">
-                  <a href="#" class="project-link">View Project</a>
+                  <button class="project-link" onclick="openProjectGallery('puskesmas', 8)">View Project</button>
                 </div>
               </div>
             </div>
@@ -143,7 +143,7 @@
                   Implementasi sistem remote access untuk SISKEUDES menggunakan Apache Guacamole, memungkinkan akses jarak jauh yang aman dan efisien.
                 </p>
                 <div class="project-links">
-                  <a href="#" class="project-link">View Project</a>
+                  <button class="project-link" onclick="openProjectGallery('guacamole', 2)">View Project</button>
                 </div>
               </div>
             </div>
@@ -158,7 +158,7 @@
                   Membangun dashboard komprehensif untuk monitoring infrastruktur IT meliputi Dashboard Data Subdomain dan OPD, Dashboard Klasifikasi Isu, serta Dashboard Server Infrastructure Monitoring untuk memastikan sistem berjalan optimal.
                 </p>
                 <div class="project-links">
-                  <a href="#" class="project-link">View Project</a>
+                  <button class="project-link" onclick="openProjectGallery('dashboard', 6)">View Project</button>
                 </div>
               </div>
             </div>
@@ -270,6 +270,27 @@
           <div class="modal-section">
             <p>Gained practical experience in software development and IT infrastructure at the local government agency.</p>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Gallery Modal -->
+    <div id="projectGalleryModal" class="modal gallery-modal">
+      <div class="gallery-modal-content">
+        <span class="close-modal" onclick="closeProjectGallery()">&times;</span>
+        
+        <div class="gallery-container">
+          <button class="gallery-nav prev" onclick="changeGalleryImage(-1)">&#10094;</button>
+          <img id="galleryImage" src="" alt="Project Screenshot" class="gallery-image">
+          <button class="gallery-nav next" onclick="changeGalleryImage(1)">&#10095;</button>
+        </div>
+        
+        <div class="gallery-counter">
+          <span id="galleryCounter">1 / 1</span>
+        </div>
+        
+        <div class="gallery-thumbnails" id="galleryThumbnails">
+          <!-- Thumbnails will be inserted here by JS -->
         </div>
       </div>
     </div>
