@@ -9,7 +9,7 @@ param(
 
 Add-Type -AssemblyName System.Drawing
 
-$images = Get-ChildItem -Path $FolderPath -Include *.jpg,*.jpeg,*.png -Recurse
+$images = Get-ChildItem -Path $FolderPath -Include *.jpg, *.jpeg, *.png -Recurse
 $totalImages = $images.Count
 $compressed = 0
 $originalSize = 0
@@ -63,7 +63,8 @@ foreach ($image in $images) {
         $reduction = [math]::Round((1 - ($newFileSize / $image.Length)) * 100, 1)
         Write-Host "[$compressed/$totalImages] $($image.Name) - Reduced by $reduction%" -ForegroundColor Green
         
-    } catch {
+    }
+    catch {
         Write-Host "Error processing $($image.Name): $_" -ForegroundColor Red
     }
 }
