@@ -3,148 +3,255 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Silmi Yushini Portofolio</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600&display=swap" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Preahvihear:wght@400&display=swap" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" />
-    <link rel="stylesheet" href="index.css" />    <link rel="stylesheet" href="animations.css" />  </head>
+    <title>Silmi Yushini - Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Preahvihear:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
   <body>
     <div class="main-container">
-      <div class="header">
-        <span class="portofolio">.PORTOFOLIO</span
-        ><a href="#experience" class="about">Experience</a><a href="#about" class="home">About Me</a
-        ><a href="#project" class="lab">Project</a>
-      </div>
-      <div class="flex-row-b">
-        <div class="gradient"></div>
-        <div class="arrow"></div>
-        <div class="hello-silmi-yushini">
-          <span class="hello-am">Hello! I Am </span
-          ><span class="silmi-yushini">Silmi Yushini</span>
+      <!-- Header Navigation -->
+      <header class="header">
+        <span class="portofolio">.PORTFOLIO</span>
+        <nav class="nav-links">
+          <a href="#about" class="nav-link">About Me</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#project" class="nav-link">Projects</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <div class="hero-text">
+            <p class="hello-text">Hello! I Am <span class="highlight">Silmi Yushini</span></p>
+            <h1 class="hero-title">
+              Because every story deserves a stunning 
+              <span class="highlight">introduction</span>
+            </h1>
+            <p class="hero-subtitle">A Designer who believes good stories begin with good design.</p>
+            <p class="hero-description">
+              I'm a <strong>Front End Developer</strong> and <strong>Software Engineer</strong> who interned at Diskominfo Kab Purwakarta
+            </p>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/silmiyushini" target="_blank" class="social-icon linkedin-icon" aria-label="LinkedIn"></a>
+              <a href="https://github.com/xtrayou" target="_blank" class="social-icon github-icon" aria-label="GitHub"></a>
+              <a href="https://instagram.com/_silmiyushini" target="_blank" class="social-icon instagram-icon" aria-label="Instagram"></a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="profile-image"></div>
+          </div>
         </div>
-        <div class="desain-tanpa-judul"></div>
-        <span class="designer-who">A Designer who</span>
-        <div class="stunning-introduction">
-          <span class="good-design"
-            >Because every story <br />deserves a stunning </span
-          ><span class="introduction">introduction</span>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about-section">
+        <div class="section-content">
+          <p class="about-text">
+            I'm currently focused on honing my skills in software development. I enjoy working on various projects and constantly learning new programming languages and technologies. My goal is to build impactful applications that can solve real-world problems.
+          </p>
         </div>
-        <div class="ellipse"></div>
-        <span class="good-stories">Good stories begin with good design.</span>
-        <div class="linkedin"></div>
-        <div class="group"></div>
-        <div class="github"></div>
-        <span class="front-end-developer">I'm a Front End Developer.| </span
-        ><span class="software-engineer"
-          > I'm a Software Engineer who intership at Diskominfo Kab Purwakarta</span
-        >
-      </div>
-      <span id="about" class="front-end-developer-portfolio"
-        >I'm currently focused on honing my skills in software development. I enjoy working on various projects and constantly learning new programming languages and technologies. My goal is to build impactful applications that can solve real-world problems.</span
-      >
-      <div id="experience" class="flex-row">
-        <div class="gradient-1"></div>
-        <span class="skills-technologies">Skills & Technologies</span>
-        <div class="skills-container" style="position: absolute; top: 200px; left: 0;">
+      </section>
+
+      <!-- Skills Section -->
+      <section class="skills-section">
+        <div class="section-content">
+          <h2 class="section-title">Skills & Technologies</h2>
+          <div class="skills-container">
             <a href="https://skillicons.dev">
-                <img src="https://skillicons.dev/icons?i=html,css,php,laravel,vue,bootstrap,git,docker,github,graphql,nodejs,express,mysql,redis&perline=8" alt="My Skills" />
+              <img src="https://skillicons.dev/icons?i=html,css,php,laravel,vue,bootstrap,git,docker,github,graphql,nodejs,express,mysql,redis&perline=8" alt="My Skills" />
             </a>
+          </div>
         </div>
-        <div class="rectangle-5"><div class="rectangle-6"></div></div>
-        <span class="experience"> Experience</span>
-      </div>
-      <div class="flex-row-dff">
-        <div class="rectangle-7">
-          <div class="mask-group-8">
-            <div class="group-9"></div>
-            <div class="flex-column">
-              <span class="studi-independent-msib"
-                >studi independent on MSIB batch 7 in infinite learning as
-                HCRH</span
-              >
-              <div class="rectangle-a">
-                <span class="learn-more">LEARN MORE<br /></span>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="experience-section">
+        <div class="section-content">
+          <h2 class="section-title">Experience</h2>
+          <div class="experience-grid">
+            <div class="experience-card">
+              <div class="experience-logo"></div>
+              <div class="experience-info">
+                <h3 class="experience-title">Infinite Learning Batch 7</h3>
+                <p class="experience-description">
+                  Studi Independent on MSIB batch 7 in Infinite Learning as HCRH
+                </p>
+                <button class="learn-more-btn" onclick="openModal('infiniteModal')">LEARN MORE</button>
+              </div>
+            </div>
+            <div class="experience-card">
+              <div class="experience-logo magang-logo"></div>
+              <div class="experience-info">
+                <h3 class="experience-title">Magang Mandiri</h3>
+                <p class="experience-description">
+                  Magang mandiri at Dinas Komunikasi dan Informatika Kabupaten Purwakarta
+                </p>
+                <button class="learn-more-btn" onclick="openModal('magangModal')">LEARN MORE</button>
               </div>
             </div>
           </div>
         </div>
-        <span class="infinite-learning-batch">Infinite Learning Batch 7</span>
-      </div>
-      <span class="contact">Contact</span
-      ><span class="cross-functional-team"
-        >I'm currently looking to join a cross-functional team that values
-        improving people's lives<br />through accessible design. or have a
-        project in mind? Let's connect.<br /><br />silmiyushini1919@gmail.com</span
-      >
-      <div class="social-icons"></div>
-      <div id="project" class="flex-row-fbd">
-        <div class="mask-group-b">
-          <div class="group-c"></div>
-          <div class="flex-column-b-d">
-            <span class="magang-mandiri">Magang Mandiri</span
-            ><span class="magang-mandiri-dinas"
-              >magang mandiri at dinas komunikasi dan informatika Kabupaten
-              Purwakarta</span
-            >
-            <div class="rectangle-e">
-              <span class="learn-more-f">LEARN MORE<br /></span>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="project" class="projects-section">
+        <div class="section-content">
+          <h2 class="section-title">Featured Projects</h2>
+          <div class="projects-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-card">
+              <div class="project-image papais-image" data-project="papais"></div>
+              <div class="project-info">
+                <span class="project-label">Featured Project</span>
+                <h3 class="project-title">PAPAIS CCTV</h3>
+                <p class="project-description">
+                  Mengembangkan website Pantauan Purwakarta Istimewa (PAPAIS) CCTV menggunakan Framework React.JS, CSS, dan Bootstrap dengan desain responsif dan user-friendly.
+                </p>
+                <div class="project-links">
+                  <a href="#" class="project-link">View Project</a>
+                </div>
+              </div>
             </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+              <div class="project-image puskesmas-image" data-project="puskesmas"></div>
+              <div class="project-info">
+                <span class="project-label">Featured Project</span>
+                <h3 class="project-title">UPTD PUSKESMAS KOTA</h3>
+                <p class="project-description">
+                  Mengembangkan dan membuat website Puskesmas dengan fokus pada user experience yang optimal dan kemudahan akses informasi kesehatan.
+                </p>
+                <div class="project-links">
+                  <a href="#" class="project-link">View Project</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+              <div class="project-image siskeudes-image" data-project="guacamole"></div>
+              <div class="project-info">
+                <span class="project-label">Featured Project</span>
+                <h3 class="project-title">SISKEUDES REMOTE</h3>
+                <p class="project-description">
+                  Implementasi sistem remote access untuk SISKEUDES menggunakan Apache Guacamole, memungkinkan akses jarak jauh yang aman dan efisien.
+                </p>
+                <div class="project-links">
+                  <a href="#" class="project-link">View Project</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+              <div class="project-image dashboard-image" data-project="dashboard"></div>
+              <div class="project-info">
+                <span class="project-label">Featured Project</span>
+                <h3 class="project-title">MONITORING DASHBOARD</h3>
+                <p class="project-description">
+                  Membangun dashboard komprehensif untuk monitoring infrastruktur IT meliputi Dashboard Data Subdomain dan OPD, Dashboard Klasifikasi Isu, serta Dashboard Server Infrastructure Monitoring untuk memastikan sistem berjalan optimal.
+                </p>
+                <div class="project-links">
+                  <a href="#" class="project-link">View Project</a>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-        <div class="regroup">
-          <div class="icon-park-click"></div>
-          <div class="icon-park-click-10">
-            <div class="icon-park-click-11"></div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact-section">
+        <div class="section-content">
+          <h2 class="section-title">Contact</h2>
+          <p class="contact-text">
+            I'm currently looking to join a cross-functional team that values improving people's lives through accessible design. Have a project in mind? Let's connect.
+          </p>
+          <a href="mailto:silmiyushini1919@gmail.com" class="email-link">silmiyushini1919@gmail.com</a>
+          <div class="social-links-footer">
+            <a href="https://linkedin.com/in/silmiyushini" target="_blank" class="social-icon linkedin-icon" aria-label="LinkedIn"></a>
+            <a href="https://github.com/xtrayou" target="_blank" class="social-icon github-icon" aria-label="GitHub"></a>
+            <a href="https://instagram.com/_silmiyushini" target="_blank" class="social-icon instagram-icon" aria-label="Instagram"></a>
           </div>
         </div>
-        <div class="rectangle-12"><div class="rectangle-13"></div></div>
-        <div class="gradient-14"></div>
-        <div class="gradient-15"></div>
-        <div class="portfolio"></div>
-        <span class="featured-project">Featured Project</span
-        ><span class="papais-cctv">PAPAIS CCTV</span>
-        <div class="card">
-          <span class="mengembangkan-website-pantauan"
-            >Mengembangkan website Pantauan Purwakarta Istimewa (PAPAIS) CCTV
-            menggunakan Framework React.JS, CSS, dan Bootstrap dengan desain
-            responsif dan user-friendly.</span
-          >
+      </section>
+    </div>
+
+    <!-- Modal for Infinite Learning -->
+    <div id="infiniteModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('infiniteModal')">&times;</span>
+        <h2 class="modal-title">Mentee IBM Hybrid Cloud & Red Hat</h2>
+        <div class="modal-header-info">
+          <p class="modal-company">Infinite Learning Indonesia · Internship</p>
+          <p class="modal-duration">Sep 2024 - Dec 2024 · 4 mos</p>
+          <p class="modal-location">Batam, Riau Islands, Indonesia · Remote</p>
         </div>
-        <div class="icon-park-click-16"></div>
-        <div class="icon-park-click-17">
-          <div class="icon-park-click-18"></div>
-        </div>
-        <div class="gradient-19"></div>
-        <div class="portfolio-1a"><div class="screenshot"></div></div>
-        <span class="featured-project-1b">Featured Project</span
-        ><span class="uptd-puskesmas-kota">UPTD PUSKESMAS KOTA</span>
-        <div class="card-1c">
-          <span class="website-development"
-            >Mengembangkan dan membuat website Puskesmas dengan fokus pada user
-            experience yang optimal dan kemudahan akses informasi
-            kesehatan.</span
-          >
-        </div>
-      </div>
-      <div class="flex-row-a">
-        <div class="gradient-1d"></div>
-        <div class="regroup-1e">
-          <div class="click-icon"></div>
-          <div class="click-icon-1f"><div class="click-icon-20"></div></div>
-        </div>
-        <div class="gradient-21"></div>
-        <div class="portfolio-22"><div class="mask-group-23"></div></div>
-        <span class="featured-project-24">Featured Project</span
-        ><span class="siskeudes-remote">SISKEUDES REMOTE </span>
-        <div class="card-25">
-          <span class="text-24"
-            >Implementasi sistem remote access untuk SISKEUDES menggunakan
-            Apache Guacamole, memungkinkan akses jarak jauh yang aman dan
-            efisien.</span
-          >
+        <div class="modal-body">
+          <div class="modal-section">
+            <h3>1. Expertise in Hybrid Cloud & Red Hat System Administration</h3>
+            <ul>
+              <li>Mastering Linux system administration through Red Hat System Administrator I & II training.</li>
+              <li>Proficient in file management, network configuration, SELinux, and LVM-based storage.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>2. Experience in Disaster Recovery Planning for Linux Servers</h3>
+            <ul>
+              <li>Developed a Disaster Recovery Plan using Relax-and-Recover (ReaR).</li>
+              <li>Created an automated backup system and fast recovery from ransomware attacks and system failures.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>3. Cloud Computing Skills and IBM Cloud Technology Implementation</h3>
+            <ul>
+              <li>Developed and deployed cloud-based applications.</li>
+              <li>Worked on the WeatherApp project on IBM Cloud as part of cloud computing exploration.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>4. Application of Agile Methodology and SCRUM in Project Management</h3>
+            <ul>
+              <li>Implemented SCRUM Project Management to organize tasks and plan roadmaps.</li>
+              <li>Efficiently completed projects in a dynamic work environment.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h3>5. Team Collaboration and Problem-Solving in Technology Projects</h3>
+            <ul>
+              <li>Engaged in individual and team projects to tackle technical challenges.</li>
+              <li>Enhanced communication, adaptability, and analytical skills in the IT industry.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Modal for Magang Mandiri -->
+    <div id="magangModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('magangModal')">&times;</span>
+        <h2 class="modal-title">Magang Mandiri</h2>
+        <div class="modal-header-info">
+          <p class="modal-company">Dinas Komunikasi dan Informatika Kabupaten Purwakarta</p>
+          <p class="modal-duration">Internship Program</p>
+          <p class="modal-location">Purwakarta, West Java, Indonesia</p>
+        </div>
+        <div class="modal-body">
+          <div class="modal-section">
+            <p>Gained practical experience in software development and IT infrastructure at the local government agency.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   
   </body>
