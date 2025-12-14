@@ -534,6 +534,106 @@ a {
   margin: 0 auto var(--spacing-lg);
 }
 
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: var(--spacing-xl) auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: var(--card-bg);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  color: var(--text-white);
+  font-size: 1rem;
+  font-family: var(--font-primary);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 3px rgba(113, 39, 186, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--text-gray);
+  opacity: 0.6;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-submit-btn {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: var(--gradient-purple);
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(113, 39, 186, 0.4);
+}
+
+.form-submit-btn:active {
+  transform: translateY(-1px);
+}
+
+.contact-divider {
+  margin: var(--spacing-xl) auto;
+  text-align: center;
+  position: relative;
+}
+
+.contact-divider::before,
+.contact-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent-purple), transparent);
+}
+
+.contact-divider::before {
+  left: 0;
+}
+
+.contact-divider::after {
+  right: 0;
+}
+
+.contact-divider span {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 0 1rem;
+  background: var(--primary-bg);
+}
+
 .email-link {
   font-size: 1.5rem;
   font-weight: 600;
@@ -765,6 +865,26 @@ a {
   .contact-text {
     font-size: 1rem;
     line-height: 1.8;
+  }
+
+  .contact-form {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .form-submit-btn {
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .contact-divider::before,
+  .contact-divider::after {
+    width: 25%;
   }
 
   .email-link {
