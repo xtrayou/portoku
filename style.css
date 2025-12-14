@@ -10,95 +10,6 @@
   box-sizing: border-box;
 }
 
-/* ===== DECORATIVE PATHS ===== */
-.decorative-path {
-  position: absolute;
-  z-index: 0;
-  opacity: 0.15;
-  pointer-events: none;
-}
-
-.path-circle {
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  border: 2px solid var(--accent-purple);
-  animation: floatRotate 20s ease-in-out infinite;
-}
-
-.path-square {
-  width: 300px;
-  height: 300px;
-  border: 2px solid var(--accent-purple-light);
-  transform: rotate(45deg);
-  animation: floatRotate 25s ease-in-out infinite reverse;
-}
-
-.path-triangle {
-  width: 0;
-  height: 0;
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
-  border-bottom: 260px solid var(--accent-purple);
-  opacity: 0.1;
-  animation: floatSlow 30s ease-in-out infinite;
-}
-
-.path-blob {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  animation: blobMorph 15s ease-in-out infinite;
-  filter: blur(40px);
-}
-
-@keyframes floatRotate {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-30px) rotate(90deg);
-  }
-  50% {
-    transform: translateY(-60px) rotate(180deg);
-  }
-  75% {
-    transform: translateY(-30px) rotate(270deg);
-  }
-}
-
-@keyframes floatSlow {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-  }
-  33% {
-    transform: translateY(-40px) translateX(20px);
-  }
-  66% {
-    transform: translateY(-20px) translateX(-20px);
-  }
-}
-
-@keyframes blobMorph {
-  0%, 100% {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    transform: scale(1) rotate(0deg);
-  }
-  25% {
-    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
-    transform: scale(1.1) rotate(90deg);
-  }
-  50% {
-    border-radius: 50% 50% 30% 70% / 30% 70% 70% 30%;
-    transform: scale(0.9) rotate(180deg);
-  }
-  75% {
-    border-radius: 30% 70% 50% 50% / 70% 30% 30% 70%;
-    transform: scale(1.05) rotate(270deg);
-  }
-}
-
 :root {
   --primary-bg: #11071f;
   --secondary-bg: #1a0f2e;
@@ -1235,6 +1146,143 @@ a {
   .modal-company {
     font-size: 1rem;
   }
+}
+
+/* ===== DECORATIVE BACKGROUND PATHS ===== */
+.bg-decoration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.path-animate {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawPath 20s ease-in-out infinite alternate;
+}
+
+.path-1 {
+  animation-delay: 0s;
+}
+
+.path-2 {
+  animation-delay: 2s;
+}
+
+.path-3 {
+  animation-delay: 4s;
+}
+
+@keyframes drawPath {
+  0% {
+    stroke-dashoffset: 1000;
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.3;
+  }
+}
+
+.floating-circle {
+  animation: floatCircle 6s ease-in-out infinite;
+}
+
+.circle-1 {
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  animation-delay: 3s;
+}
+
+@keyframes floatCircle {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+.floating-rect {
+  animation: rotateFloat 10s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.rect-1 {
+  animation-delay: 1s;
+}
+
+.rect-2 {
+  animation-delay: 5s;
+}
+
+@keyframes rotateFloat {
+  0%, 100% {
+    transform: rotate(45deg) translateY(0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: rotate(135deg) translateY(-20px);
+    opacity: 0.5;
+  }
+}
+
+.particle {
+  animation: particleFloat 8s ease-in-out infinite;
+}
+
+.particle-1 {
+  animation-delay: 0s;
+}
+
+.particle-2 {
+  animation-delay: 2s;
+}
+
+.particle-3 {
+  animation-delay: 4s;
+}
+
+.particle-4 {
+  animation-delay: 6s;
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translate(30px, -40px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-20px, -80px);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translate(40px, -120px);
+    opacity: 0.4;
+  }
+}
+
+/* Ensure content is above decorations */
+.main-container > section,
+.main-container > header {
+  position: relative;
+  z-index: 1;
 }
 
 /* ===== DOKUMENTASI SECTION ===== */
